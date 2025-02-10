@@ -1,8 +1,8 @@
 # Song Sync
 
 Consists of two services
- - song_sync_frontend: Fontend portion of application written in React
- - song_sync_backend: Backend portion of application written in Node.js (Express)
+ - `song_sync_frontend`: Fontend portion of application written in React
+ - `song_sync_backend`: Backend portion of application written in Node.js (Express)
 
 
 ## Instructions to run

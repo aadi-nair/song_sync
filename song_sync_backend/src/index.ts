@@ -22,7 +22,7 @@ app.get("/api/seed", async (req: Request, res: Response) => {
     let migrationsPath = "../database/seeders/playlist.json";
     const scriptsPath = path.join(__dirname, migrationsPath);
     await AutoSchema.seedDB(pool, scriptsPath);
-    res.send(200);
+    res.json({"message": "Successfully seeded database"});
   } catch (e) {
     console.log(e);
     res.send(404);

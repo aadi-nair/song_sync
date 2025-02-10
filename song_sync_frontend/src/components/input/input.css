@@ -1,0 +1,17 @@
+.input {
+    /* width: 25rem; */
+    width: 100%;
+    padding-inline: 1rem;
+    padding-block: 0.7rem;
+    /* margin-block: 1.5rem; */
+  
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 0.5rem;
+  
+  
+  }
+  
+  .label {
+    margin-bottom: 0.5rem;
+  }
+  

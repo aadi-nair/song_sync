@@ -1,0 +1,28 @@
+.header {
+    background-color: #e0e0e0;
+  }
+  
+  .table-cell {
+    padding-block: 0.8rem;
+    display: flex;
+    flex-direction: row;
+
+  }
+  .row-cell {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding-inline: 0.1rem;
+
+    text-align: center;
+  }
+  
+  .moreButtonWrapper {
+    width: 2rem;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  

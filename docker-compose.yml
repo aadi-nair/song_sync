@@ -1,0 +1,34 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    networks:
+      - external
+    volumes:
+      - ./persistent_storage/pg_data:/var/lib/postgresql/data
+      - ./persistent_storage/transfer:/var/transfer:rw
+    environment:
+      - POSTGRES_PASSWORD=song_sync
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=song_db
+
+  pgadmin4:
+    image: elestio/pgadmin:latest
+    ports:
+      - 5050:5050
+    networks:
+      - external
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=aditya@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=song_sync_admin
+      - PGADMIN_LISTEN_PORT=5050
+    volumes:
+      - ./persistent_storage/servers.json:/pgadmin4/servers.json
+
+
+networks:
+  external:
+    name: docker-bridge-network
+    external: true

@@ -1,0 +1,210 @@
+:root {
+  --font-family: "Inter", sans-serif;
+  --accent-color: rgba(80, 20, 251, 0.77);
+  --google-gray: rgb(238, 238, 238);
+  --tc-gray: rgb(130, 130, 130); /*#828282*/
+  --error-red: rgba(217, 53, 77, 0.77);
+  --success-green: rgba(43, 203, 116, 0.77);
+
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* --fs-75: 0.75rem;
+  --fs-100: 1rem;
+  --fs-112: 1.125rem; 
+  --fs-125: 1.25rem; 
+  --fs-150: 1.5rem; 
+  --fs-200: 2rem; 
+  --fs-300: 3rem; */
+
+  --fs-75: 0.7rem;
+  --fs-100: 0.95rem;
+  --fs-112: 1.075rem;
+  --fs-125: 1.2rem;
+  --fs-150: 1.45rem;
+  --fs-200: 1.95rem;
+  --fs-300: 2.95rem;
+
+  --fs-h1: var(--fs-300);
+  --fs-h2: var(--fs-200);
+  --fs-h3: var(--fs-150);
+
+  --fs-xsmall: var(--fs-75);
+  --fs-small: var(--fs-100);
+  --fs-medium: var(--fs-112);
+  --fs-large: var(--fs-125);
+  --fs-xlarge: var(--fs-150);
+  --fs-xxlarge: var(--fs-200);
+}
+
+.fs-h1 {
+  font-size: var(--fs-h1);
+}
+.fs-h2 {
+  font-size: var(--fs-h2);
+}
+.fs-h3 {
+  font-size: var(--fs-h3);
+}
+
+.fs-xsmall {
+  font-size: var(--fs-xsmall);
+}
+.fs-small {
+  font-size: var(--fs-small);
+}
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+.fs-large {
+  font-size: var(--fs-large);
+}
+.fs-xlarge {
+  font-size: var(--fs-xlarge);
+}
+.fs-xxlarge {
+  font-size: var(--fs-xxlarge);
+}
+.fw-extra-light {
+  font-weight: var(--fw-extra-light);
+}
+.fw-light {
+  font-weight: var(--fw-light);
+}
+
+.fw-medium {
+  font-weight: var(--fw-medium);
+}
+.fw-semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-extrabold {
+  font-weight: var(--fw-extrabold);
+}
+
+.tc-white {
+  color: white;
+}
+
+.tc-black {
+  color: black;
+}
+
+.tc-red {
+  color: var(--error-red);
+}
+
+.tc-accent {
+  color: var(--accent-color);
+}
+
+.tc-gray {
+  color: var(--tc-gray);
+}
+
+.bg-google-gray {
+  background-color: var(--google-gray);
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+}
+
+p {
+  font-size: var(--fs-100);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: start;
+  align-items: start;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: start;
+  align-items: start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.image {
+  display: block;
+  position: relative;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.button {
+  /* border: none; */
+  cursor: pointer;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button {
+  font-family: var(--font-family);
+}
+
+button:hover {
+  transition: filter 0.3s ease;
+  filter: brightness(85%);
+}

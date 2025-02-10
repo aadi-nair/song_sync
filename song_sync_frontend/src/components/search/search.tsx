@@ -19,7 +19,7 @@ function Search({
           onSubmit(inputRef.current?.value ?? "");
         }}
       >
-        Search
+        Get Song
       </Button>
     </div>
   );

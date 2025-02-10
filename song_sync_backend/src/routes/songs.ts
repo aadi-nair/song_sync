@@ -5,7 +5,6 @@ const songsRouter: Router = express.Router();
 
 songsRouter.get("/", async (req: Request, res: Response) => {
   try {
-    console.log("title: ", req.query.title);
     const resp = await SongsController.getByTitle(req.query.title as string);
 
     res.json(resp);

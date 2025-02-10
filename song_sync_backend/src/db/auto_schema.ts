@@ -48,7 +48,7 @@ export class AutoSchema {
       }
 
       const query = format(
-        "INSERT INTO songs (id, title, danceability, energy, mode, acousticness, tempo, duration_ms, num_sections, num_segments) VALUES %L ON CONFLICT (id) DO UPDATE",
+        "INSERT INTO songs (id, title, danceability, energy, mode, acousticness, tempo, duration_ms, num_sections, num_segments) VALUES %L;",
         values
       );
 

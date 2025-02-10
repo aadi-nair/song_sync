@@ -1,5 +1,30 @@
 version: "3"
+name: song-sync
 services:
+  backend-service:
+    build:
+      context: ./song_sync_backend
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    environment:
+      - PORT=5000
+      - DB_HOST=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=song_sync
+      - DB_NAME=song_db
+    networks:
+      - external
+
+  frontend-service:
+    build:
+      context: ./song_sync_frontend 
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - external
+
   postgres:
     image: postgres:latest
     ports:
@@ -7,25 +32,14 @@ services:
     networks:
       - external
     volumes:
-      - ./persistent_storage/pg_data:/var/lib/postgresql/data
-      - ./persistent_storage/transfer:/var/transfer:rw
+      - /var/persistent_storage/pg_data:/var/lib/postgresql/data
+      - /var/persistent_storage/transfer:/var/transfer:rw
     environment:
       - POSTGRES_PASSWORD=song_sync
       - POSTGRES_USER=postgres
       - POSTGRES_DB=song_db
 
-  pgadmin4:
-    image: elestio/pgadmin:latest
-    ports:
-      - 5050:5050
-    networks:
-      - external
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=aditya@gmail.com
-      - PGADMIN_DEFAULT_PASSWORD=song_sync_admin
-      - PGADMIN_LISTEN_PORT=5050
-    volumes:
-      - ./persistent_storage/servers.json:/pgadmin4/servers.json
+
 
 
 networks:

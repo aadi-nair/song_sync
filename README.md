@@ -36,6 +36,37 @@ Accessing `http://localhost:5000/api/seed` parses `playlist.json` and bulk inser
 
 
 
+## Instructions to run locally
+1. Navigate to `song_sync` and run the following docker command to get postgres running
+
+    ```
+    docker compose -f docker-compose-dev.yml up -d
+    ```
+
+2. Navigate to `song_sync_backend` and run the following command to run the backend locally
+
+    ```
+    npm install
+    npm run dev
+    ```
+
+    `song_sync_backend` will now run on `localhost:5000` 
+
+3. To seed the database from `playlist.json` make the following API call 
+
+    ```
+    GET http://localhost:5000/api/seed
+    ```
+
+4. Navigate to `song_sync_frontend` and run the following command to run the frontend locally
+
+    ```
+    npm install
+    npm run dev
+    ```
+
+    `song_sync_frontend` will now run on `localhost:3000` 
+
 
 
 

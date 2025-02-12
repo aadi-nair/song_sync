@@ -25,7 +25,7 @@ app.get("/api/seed", async (req: Request, res: Response) => {
     res.json({ message: "Successfully seeded database" });
   } catch (e) {
     console.log(e);
-    res.send(404);
+    res.status(500).json({ error: "Seeding failed" });
   }
 });
 

@@ -1,5 +1,4 @@
-import { Helper } from "../db/";
-import { PGPool } from "../db/";
+import { Helper, PGPool } from "../db/";
 
 export class SongsController {
   public static async getByTitle(title: string) {
@@ -12,8 +11,8 @@ export class SongsController {
         [`%${title}%`]
       );
       return result.rows;
-    } catch (e) {
-      throw e;
+    } catch (error) {
+      throw error;
     } finally {
       client.release();
     }

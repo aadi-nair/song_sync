@@ -10,9 +10,9 @@ songsRouter.get("/", async (req: Request, res: Response) => {
     );
 
     res.json(resp);
-  } catch (e) {
-    console.log(e);
-    res.status(500).json({ message: `${e}` });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: `${error}` });
   }
 });
 

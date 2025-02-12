@@ -2,7 +2,6 @@ import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { PGPool, AutoSchema, Helper } from "./db";
-import { dbConfig } from "./config";
 import path from "path";
 
 import { songsRouter } from "./routes";
@@ -13,7 +12,8 @@ const app: Express = express();
 app.use(cors<Request>());
 
 const port = process.env.PORT || 5000;
-const pool = new PGPool(dbConfig);
+const pool: PGPool = Helper.pool();
+
 
 app.use("/api/songs", songsRouter);
 
@@ -23,10 +23,11 @@ app.get("/api/seed", async (req: Request, res: Response) => {
     const scriptsPath = path.join(__dirname, migrationsPath);
     await AutoSchema.seedDB(pool, scriptsPath);
     res.json({ message: "Successfully seeded database" });
-  } catch (e) {
-    console.log(e);
+  } catch (error) {
+    console.log(error);
     res.status(500).json({ error: "Seeding failed" });
   }
+ 
 });
 
 app.listen(port, async () => {

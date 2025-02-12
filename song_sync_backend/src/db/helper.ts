@@ -3,6 +3,6 @@ import { dbConfig } from "../config";
 
 export class Helper {
   public static pool(): PGPool {
-    return new PGPool(dbConfig);
+    return PGPool.getInstance(dbConfig);
   }
 }

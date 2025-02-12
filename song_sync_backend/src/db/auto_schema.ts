@@ -17,15 +17,16 @@ export class AutoSchema {
         await client.query(scriptSQL);
         console.log(`[sql]: ${scriptSQL}`);
       });
-    } catch (e) {
-      throw e;
+    } catch (error) {
+      throw error;
+    } finally {
+      client.release();
     }
   }
 
   public static async seedDB(pool: PGPool, jsonPath: string) {
+    const client = await pool.connect();
     try {
-      const client = await pool.connect();
-
       const rawData = fs.readFileSync(jsonPath, "utf-8");
       const jsonData = JSON.parse(rawData);
 
@@ -53,8 +54,10 @@ export class AutoSchema {
       );
 
       await client.query(query);
-    } catch (e) {
-      throw e;
+    } catch (error) {
+      throw error;
+    } finally {
+      client.release();
     }
   }
 }

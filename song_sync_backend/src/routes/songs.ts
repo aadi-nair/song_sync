@@ -12,7 +12,7 @@ songsRouter.get("/", async (req: Request, res: Response) => {
     res.json(resp);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: `${error}` });
+    res.status(500).json({ message: "Error occurred while fetching songs" });
   }
 });
 

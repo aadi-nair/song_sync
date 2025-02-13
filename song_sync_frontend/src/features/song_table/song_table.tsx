@@ -12,12 +12,20 @@ const columns = [
   { title: "Title", key: "title", weight: "5fr" },
   { title: "Danceability", key: "danceability", weight: "3fr" },
   { title: "Energy", key: "energy", weight: "2fr" },
+  // { title: "Key", key: "key", weight: "2fr" },
+  // { title: "Loudness", key: "loudness", weight: "2fr" },
   { title: "Mode", key: "mode", weight: "2fr" },
   { title: "Acousticness", key: "acousticness", weight: "3fr" },
+  // { title: "Instrumentalness", key: "instrumentalness", weight: "3fr" },
+  // { title: "Liveness", key: "liveness", weight: "3fr" },
+  // { title: "Valence", key: "valence", weight: "3fr" },
   { title: "Tempo", key: "tempo", weight: "2fr" },
   { title: "Duration", key: "duration_ms", weight: "2fr" },
+  // { title: "TS", key: "time_signature", weight: "2fr" },
+  // { title: "Bars", key: "num_bars", weight: "2fr" },
   { title: "Sections", key: "num_sections", weight: "2fr" },
   { title: "Segments", key: "num_segments", weight: "2fr" },
+  // { title: "Class", key: "class", weight: "2fr" },
 ];
 
 function Body({ songList }: { songList?: Song[] }) {
